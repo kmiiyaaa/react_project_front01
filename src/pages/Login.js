@@ -19,7 +19,7 @@ function Login({ onLogin }) {
       );
 
       //현재 로그인한 사용자 정보
-      const res = await api.get("api/auth/lme"); // 현재 로그인한 아이디
+      const res = await api.get("api/auth/me"); // 현재 로그인한 아이디
       onLogin(res.data.username);
 
       alert("로그인 성공!");
