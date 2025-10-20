@@ -1,0 +1,22 @@
+.home-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 35px;
+  background-color: #fff0f5; /* 연보라색 */
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.home-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #ff6f91; /* 핑크 계열 */
+}
+
+.home-container p {
+  font-size: 1.1rem;
+  color: #ff85a2; /* 연핑크 */
+  margin-bottom: 12px;
+  line-height: 1.6;
+}

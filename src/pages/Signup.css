@@ -1,0 +1,61 @@
+/* 전체 배경 */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #fff0f6; /* 부드러운 핑크 배경 */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 카드 형태 */
+.signup-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+/* 제목 */
+.signup-card h2 {
+  margin-bottom: 30px;
+  color: #ff6b81;
+}
+
+/* 입력창 */
+.signup-card input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 2px solid #ffd6e0;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.signup-card input:focus {
+  border-color: #ff6b81;
+  box-shadow: 0 0 5px #ff6b81;
+}
+
+/* 버튼 */
+.signup-card button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.signup-card button:hover {
+  background-color: #ff4757;
+  transform: translateY(-2px);
+}
