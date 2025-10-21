@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Board({ user }) {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   //게시글 목록 불러오기
@@ -43,6 +44,7 @@ function Board({ user }) {
       <h2>게시판</h2>
       {loading && <p>게시판 글 리스트 로딩 중...</p>}
       {/*로딩 중에는 로딩 메시지, 다 불러오면 실제 내용을 보여주는 역할*/}
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <table>
         <thead>
           <tr>
@@ -59,7 +61,12 @@ function Board({ user }) {
               .map((p, index) => (
                 <tr key={p.id}>
                   <td>{posts.length - index}</td>
-                  <td>{p.title}</td>
+                  <td
+                    className="click-title"
+                    onClick={() => navigate(`/board/${p.id}`)}
+                  >
+                    {p.title}
+                  </td>
                   <td>{p.author.username}</td>
                   <td>{formatDate(p.createDate)}</td>
                 </tr>

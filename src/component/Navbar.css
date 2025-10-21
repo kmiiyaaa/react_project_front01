@@ -22,18 +22,23 @@
   gap: 12px;
 }
 
-.menu a {
+.menu a,
+.menu button {
   text-decoration: none;
-  color: #ffffff;
   font-weight: bold;
   padding: 8px 14px;
   border-radius: 12px;
-  background-color: #ffe0e6; /* 살짝 연한 배경 */
-  color: #fd8da1; /* 글자 색상 */
+  background-color: #ffe0e6; /* 연핑크 */
+  color: #fd8da1; /* 진한 핑크 */
   transition: all 0.3s ease;
+  display: inline-block; /* 버튼과 링크의 크기 통일 */
+  border: none; /* 버튼 기본 테두리 제거 */
+  cursor: pointer; /* 마우스 커서 동일 */
+  font-family: inherit; /* 폰트 동일하게 */
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu button:hover {
   background-color: #f399aa;
   color: #ffffff;
   transform: scale(1.1);

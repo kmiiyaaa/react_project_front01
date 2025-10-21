@@ -2,10 +2,15 @@ import "./BoardDetail.css";
 import api from "../api/axiosConfig";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import PostView from "../component/PostView";
 import PostEdit from "../component/PostEdit";
+import CommentForm from "../component/CommentForm";
+import CommentList from "../component/CommentList";
 
 function BoardDetail({ user }) {
+  //user(props) -> 현재 로그인한 사용자의 username
+
   const [post, setPost] = useState(null); //해당 글id로 요청한 글 객체
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState(false); // 수정화면 출력 여분
@@ -29,7 +34,24 @@ function BoardDetail({ user }) {
 
   useEffect(() => {
     loadPost(); //게시글 다시 불러오기
+    loadComments();
   }, [id]);
+
+  //댓글 관련 이벤트 처리
+
+  //기존 댓글 배열
+  const [comments, setCmments] = useState([]);
+
+  //댓글 리스트 불러오기 함수
+  const loadComments = async () => {
+    try {
+      const res = await api.get(`/api/comments/${id}`);
+      setCmments(res.data);
+    } catch (err) {
+      console.error(err);
+      alert("댓글 리스트 불러오기 실패");
+    }
+  };
 
   if (loading) return <p>게시글 로딩 중...</p>;
   if (error) return <p style={{ color: "red" }}>{error}</p>;
@@ -46,6 +68,10 @@ function BoardDetail({ user }) {
       )}
 
       {/* 댓글 영역 */}
+      <div className="comment-section">
+        <CommentForm />
+        <CommentList />
+      </div>
     </div>
   );
 }

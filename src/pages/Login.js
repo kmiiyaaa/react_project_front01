@@ -31,7 +31,7 @@ function Login({ onLogin }) {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h2>회원 로그인</h2>
       <form onSubmit={handleLogin}>
         <input
