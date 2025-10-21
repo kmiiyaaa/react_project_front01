@@ -9,18 +9,21 @@ function Board({ user }) {
   const navigate = useNavigate();
 
   //게시글 목록 불러오기
+
+  const loadPost = async () => {
+    try {
+      const res = await api.get("/api/board");
+      setPosts(res.data);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const posts = async () => {
-      try {
-        const res = await api.get("/board/list");
-        setPosts(res.data);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-  });
+    loadPost();
+  }, []);
 
   //글쓰기 버튼 클릭
   const handleWrite = () => {

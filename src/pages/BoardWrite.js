@@ -22,7 +22,7 @@ function BoardWrite({ user }) {
     try {
       await api.post("/api/board", { title, content });
       alert("글 작성 성공!");
-      navigate();
+      navigate("/board");
     } catch (err) {
       if (err.response && err.response.status == 400) {
         setErrors(err.response.data);
