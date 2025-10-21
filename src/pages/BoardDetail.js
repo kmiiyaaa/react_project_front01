@@ -59,7 +59,7 @@ function BoardDetail({ user }) {
     return <p style={{ color: "red" }}>해당 게시글이 존재하지 않습니다.</p>;
 
   return (
-    <div>
+    <div className="detail-container">
       {/* 게시글 영역 */}
       {editing ? (
         <PostEdit post={post} setEditing={setEditing} setPost={setPost} />

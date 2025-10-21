@@ -29,24 +29,28 @@ function PostView({ post, user, setEditing }) {
   };
 
   return (
-    <div>
+    <>
       <h2>{post.title}</h2>
-      <p>작성자 : {post.author.username}</p>
-      <p>작성일 : {formatDate(post.createDate)}</p>
-      <div>{post.content}</div>
+      <p className="author">작성자 : {post.author.username}</p>
+      <p className="author">작성일 : {formatDate(post.createDate)}</p>
+      <div className="content">{post.content}</div>
 
-      <div>
-        <button onClick={() => navigate("/board")}>글목록</button>
-
+      <div className="button-group">
+        <button className="list-button" onClick={() => navigate("/board")}>
+          글목록
+        </button>
         {isAuthor && (
           <>
-            <button onClick={() => setEditing(true)}>수정</button>
-            <button onClick={handleDelete}>삭제</button>
+            <button className="edit-button" onClick={() => setEditing(true)}>
+              수정
+            </button>
+            <button className="delete-button" onClick={handleDelete}>
+              삭제
+            </button>
           </>
         )}
       </div>
-    </div>
+    </>
   );
 }
-
 export default PostView;

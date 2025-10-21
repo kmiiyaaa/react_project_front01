@@ -5,28 +5,28 @@ function CommentForm({ user, loadComments, boardId }) {
   const [newComment, setNewComment] = useState("");
   const [commentErrors, setCommentErrors] = useState({});
 
-  //댓글 쓰기 함수
+   //댓글 쓰기 함수
   const handleCommentSubmit = async (e) => {
     e.preventDefault(); //초기화
     setCommentErrors({});
 
     if (!user) {
-      alert("로그인 후 댓글 작성 가능");
-      return;
-    }
+      alert("로그인 후 댓글 작성해주세요");
 
+      return; // 안써주면 로그아웃 상태에서 댓글작성시 밑에 내용도 알람창 뜬다.
+    }
     if (!newComment) {
-      alert("댓글을 입력해주세요");
+      alert("댓글 내용을 입력해주세요.");
       return;
     }
 
     try {
-      alert("댓글을 입력하시겠습니까?");
-      await api.post(`/api/comments/${boardId}`, { content: newComment }); // boardId = 게시글id
+      alert("댓글을 입력하시겠습니까?"); // 원래는 confirm 사용해야함
+      await api.post(`/api/comments/${boardId}`, { content: newComment }); //여기서 boardId는 게시글의 id
       setNewComment("");
 
-      //댓글 리스트 불러오기 호출 -> 새 댓글 기존리스트에 반영
-      loadComments();
+      //댓글 리스트 불러오기 호출
+      loadComments(); //새 댓글 기존 댓글 리스트에 반영
     } catch (err) {
       if (err.response && err.response.status === 400) {
         setCommentErrors(err.response.data);
@@ -38,7 +38,7 @@ function CommentForm({ user, loadComments, boardId }) {
   };
 
   return (
-    <div>
+    <div className="comment-form">
       <h3>댓글 쓰기</h3>
       <form onSubmit={handleCommentSubmit}>
         <textarea
@@ -49,7 +49,7 @@ function CommentForm({ user, loadComments, boardId }) {
         {commentErrors.content && (
           <p style={{ color: "red" }}>{commentErrors.content}</p>
         )}
-        <button type="submit">등록</button>
+         <button type="submit" className="list-button">등록</button>
       </form>
     </div>
   );

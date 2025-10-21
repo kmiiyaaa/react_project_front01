@@ -49,13 +49,13 @@ function CommentList({ comments, user, loadComments }) {
   };
 
   return (
-    <ul>
+     <ul className="comment-list">
       {comments.length === 0 && <p>등록 댓글이 없습니다.</p>}
       {comments.map((c) => (
-        <li key={c.id}>
-          <div>
-            <span>{c.author.username}</span>
-            <span>{commentFormDate(c.createDate)}</span>
+        <li key={c.id} className="comment-item">
+          <div className="comment-header">
+             <span className="comment-author">{c.author.username}</span>
+            <span className="comment-date">{commentFormDate(c.createDate)}</span>
           </div>
 
           {editCommentId === c.id ? (
@@ -65,21 +65,23 @@ function CommentList({ comments, user, loadComments }) {
                 value={editCommentContent}
                 onChange={(e) => setEditCommentContent(e.target.value)}
               />
+              <div className="button-group">
               <button onClick={() => handleCommentUpdate(c.id)}>저장</button>
               <button onClick={() => setEditCommentId(null)}>취소</button>
+              </div>
             </>
           ) : (
             /* 댓글 읽기 섹션 */
             <>
-              <div>{c.content}</div>
+              <div className="comment-content">{c.content}</div>
               <div>
                 {user === c.author.username && (
-                  <>
-                    <button onClick={() => handleCommentEdit(c)}>수정</button>
-                    <button onClick={() => handleCommentDelete(c.id)}>
+                  <div className="button-group">
+                    <button className="edit-button" onClick={() => handleCommentEdit(c)}>수정</button>
+                    <button className="delete-button" onClick={() => handleCommentDelete(c.id)}>
                       삭제
                     </button>
-                  </>
+                  </div>
                 )}
               </div>
             </>

@@ -2,44 +2,49 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 25px;
-  background-color: #f3c9ca; /* 파스텔 핑크 */
-  color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fffaf3;
+  border-bottom: 2px solid #ffe0b2;
+  padding: 15px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   position: sticky;
-  top: 10px;
-  margin: 10px;
+  top: 0;
+  z-index: 10;
 }
 
-.navbar > div:first-child {
-  font-size: 1.6rem;
+.navbar div:first-child {
+  font-size: 17px;
   font-weight: bold;
+  color: #ff7b00;
 }
 
 .menu {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 20px;
 }
 
-.menu a,
-.menu button {
+.menu a {
   text-decoration: none;
-  font-weight: bold;
-  padding: 8px 14px;
-  border-radius: 12px;
-  background-color: #ffe0e6; /* 연핑크 */
-  color: #fd8da1; /* 진한 핑크 */
-  transition: all 0.3s ease;
-  display: inline-block; /* 버튼과 링크의 크기 통일 */
-  border: none; /* 버튼 기본 테두리 제거 */
-  cursor: pointer; /* 마우스 커서 동일 */
-  font-family: inherit; /* 폰트 동일하게 */
+  color: #444;
+  font-size: 16px;
+  transition: color 0.2s ease;
 }
 
-.menu a:hover,
+.menu a:hover {
+  color: #ff7b00;
+}
+
+.menu button {
+  background-color: #ff7b00;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+}
+
 .menu button:hover {
-  background-color: #f399aa;
-  color: #ffffff;
-  transform: scale(1.1);
+  background-color: #ff9500;
 }

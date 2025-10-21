@@ -1,22 +1,72 @@
 .home-container {
-  max-width: 700px;
-  margin: 50px auto;
-  padding: 35px;
-  background-color: #fff0f5; /* 연보라색 */
-  border-radius: 20px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
   text-align: center;
+  background-color: #fffaf3;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .home-container h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
+  color: #ff7b00;
   margin-bottom: 20px;
-  color: #ff6f91; /* 핑크 계열 */
 }
 
 .home-container p {
   font-size: 1.1rem;
-  color: #ff85a2; /* 연핑크 */
-  margin-bottom: 12px;
+  color: #444;
   line-height: 1.6;
+  margin: 8px 0;
+}
+
+.best-section {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.best-section h3 {
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.best-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.best-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.best-card:hover {
+  transform: translateY(-5px);
+}
+
+.best-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.best-card .info {
+  padding: 12px;
+}
+
+.best-card .info h4 {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.best-card .info p {
+  font-size: 0.9rem;
+  color: #777;
 }

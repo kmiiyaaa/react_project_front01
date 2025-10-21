@@ -1,100 +1,106 @@
+/* 전체 컨테이너 */
 .board-container {
   max-width: 900px;
-  margin: 40px auto;
-  padding: 25px;
-  background-color: #fff6f7; /* 부드러운 핑크톤 배경 */
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #fffaf3;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* 제목 */
 .board-container h2 {
-  color: #fd8da1;
+  text-align: center;
+  color: #ff7b00;
   font-size: 1.8rem;
-  margin-bottom: 20px;
-  font-weight: bold;
+  margin-bottom: 25px;
 }
 
-/* 테이블 스타일 */
-table {
-  width: 80%;
-  margin: 0 auto;
+/* 게시판 테이블 */
+.board-container table {
+  width: 100%;
   border-collapse: collapse;
-  background-color: white;
+  background: white;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-th,
-td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #ffe0e6;
+.board-container th,
+.board-container td {
+  border-bottom: 1px solid #f1e2d0;
+  padding: 14px 10px;
+  text-align: center;
+  color: #333;
 }
 
-th {
-  background-color: #fcdce3; /* 연핑크 */
-  color: #fd8da1;
+.board-container th {
+  background-color: #ffe7c7;
+  color: #333;
   font-weight: bold;
 }
 
-td {
-  color: #555;
+.board-container tr:hover {
+  background-color: #fff2e0;
+  transition: background-color 0.2s ease;
 }
 
-tr:hover {
-  background-color: #fff0f3;
-  transition: 0.2s ease-in-out;
-}
-
+/* 제목 클릭 가능한 부분 */
 .click-title {
+  color: #ff7b00;
   cursor: pointer;
-  color: #555;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .click-title:hover {
   text-decoration: underline;
-  color: rgb(219, 192, 161);
 }
 
-/* 로딩 메시지 */
-p {
-  color: #fd8da1;
-  font-weight: 500;
-  margin: 20px 0;
+/* 페이지네이션 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 25px 0 10px;
+}
+
+.pagination button {
+  border: none;
+  background-color: #fff7eb;
+  color: #444;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.pagination button:hover {
+  background-color: #ffe1b8;
+}
+
+.pagination .active {
+  background-color: #ff7b00;
+  color: white;
+  font-weight: bold;
 }
 
 /* 글쓰기 버튼 */
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #fd8da1;
-  border: none;
-  border-radius: 12px;
+.board-container > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.board-container button:last-child {
+  background-color: #ff7b00;
   color: white;
-  font-weight: bold;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
 }
 
-button:hover {
-  background-color: #f67b8c;
-  transform: scale(1.05);
-}
-
-/* 반응형 */
-@media (max-width: 600px) {
-  .board-container {
-    padding: 15px;
-  }
-
-  table {
-    font-size: 0.9rem;
-  }
-
-  th,
-  td {
-    padding: 8px;
-  }
+.board-container button:last-child:hover {
+  background-color: #ff9500;
 }
