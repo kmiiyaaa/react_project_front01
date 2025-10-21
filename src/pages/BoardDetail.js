@@ -40,13 +40,13 @@ function BoardDetail({ user }) {
   //댓글 관련 이벤트 처리
 
   //기존 댓글 배열
-  const [comments, setCmments] = useState([]);
+  const [comments, setComments] = useState([]);
 
   //댓글 리스트 불러오기 함수
   const loadComments = async () => {
     try {
       const res = await api.get(`/api/comments/${id}`);
-      setCmments(res.data);
+      setComments(res.data);
     } catch (err) {
       console.error(err);
       alert("댓글 리스트 불러오기 실패");
@@ -69,8 +69,12 @@ function BoardDetail({ user }) {
 
       {/* 댓글 영역 */}
       <div className="comment-section">
-        <CommentForm />
-        <CommentList />
+        <CommentForm user={user} boardId={id} loadComments={loadComments} />
+        <CommentList
+          comments={comments}
+          user={user}
+          loadComments={loadComments}
+        />
       </div>
     </div>
   );

@@ -46,6 +46,9 @@ function CommentForm({ user, loadComments, boardId }) {
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
         ></textarea>
+        {commentErrors.content && (
+          <p style={{ color: "red" }}>{commentErrors.content}</p>
+        )}
         <button type="submit">등록</button>
       </form>
     </div>

@@ -46,8 +46,9 @@ function BoardWrite({ user }) {
         <textarea
           placeholder="내용"
           value={content}
-          onChange={(e) => setContent(e.target.vlaue)}
+          onChange={(e) => setContent(e.target.value)}
         ></textarea>
+
         <div>
           <button type="submit">등록</button>
           <button type="button" onClick={() => navigate("/board")}>
