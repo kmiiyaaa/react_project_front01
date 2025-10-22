@@ -1,0 +1,79 @@
+.image-write-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-write-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.image-write-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.image-write-form label {
+  font-weight: bold;
+  color: #444;
+}
+
+.image-write-form input[type="text"],
+.image-write-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.image-write-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.image-preview {
+  text-align: center;
+}
+
+.image-preview img {
+  margin-top: 10px;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button-group button[type="submit"] {
+  background-color: #ff9800;
+  color: white;
+}
+
+.button-group .cancel-btn {
+  background-color: #ccc;
+}
+
+.button-group button:hover {
+  opacity: 0.9;
+}

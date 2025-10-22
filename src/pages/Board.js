@@ -18,7 +18,7 @@ function Board({ user }) {
     try {
       setLoading(true);
       const res = await api.get(`/api/board?page=${page}&size=10`);
-      console.log("📦 API 응답 데이터:", res.data);
+      console.log("📦 API 응답 데이터:", res.data.posts);
 
       setPosts(res.data.posts); // 전체 게시글 -> 개시글의 배열
       setCurrentPage(res.data.currentPage); //현재 페이지 번호
@@ -77,6 +77,7 @@ function Board({ user }) {
             <th>제목</th>
             <th>글쓴이</th>
             <th>작성일</th>
+            <th>조회수</th>
           </tr>
         </thead>
         <tbody>
@@ -90,10 +91,12 @@ function Board({ user }) {
                     className="click-title"
                     onClick={() => navigate(`/board/${p.id}`)}
                   >
-                    {p.title}
+                    {p.title} ({p.comments.length})
                   </td>
+
                   <td>{p.authorName}</td>
                   <td>{formatDate(p.createDate)}</td>
+                  <td>{p.viewCount}</td>
                 </tr>
               ))
           ) : (
