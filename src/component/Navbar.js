@@ -7,7 +7,8 @@ function Navbar({ user, onLogout }) {
       <div>🏡맛집List🍽️</div>
       <div className="menu">
         <Link to="/">Home</Link>
-        <Link to="/board">게시판</Link>
+        <Link to="/image-board">맛집포스팅</Link>
+        <Link to="/board">자유게시판</Link>
         {!user && <Link to="/login">로그인</Link>}
         {!user && <Link to="/signup">회원가입</Link>}
 

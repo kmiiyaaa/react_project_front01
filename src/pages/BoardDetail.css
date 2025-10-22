@@ -21,8 +21,7 @@
 }
 
 /* 글 제목 */
-.detail-container h2,
-.edit-form h2 {
+.post-title {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 12px;
@@ -30,26 +29,28 @@
 }
 
 /* 작성자/작성일 */
-.detail-container p,
-.comment-header span {
+.post-meta {
   font-size: 14px;
   color: #00713a;
-  margin-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+.post-meta span {
+  display: inline-block;
+  margin-right: 15px;
 }
 
 /* 글 내용 */
-.detail-container > div:nth-child(3),
-.comment-content {
+.post-content {
   min-height: 180px;
-  border: 1px solid #eee;
+  border: 1px solid #f8bfbf;
   border-radius: 12px;
   background-color: #fafafa;
-  padding: 15px;
+  padding: 20px;
   font-size: 16px;
   line-height: 1.6;
   white-space: pre-wrap;
   color: #444;
-  margin-bottom: 20px;
 }
 
 /* --------------------------------- */
@@ -74,20 +75,40 @@ button {
 }
 
 /* 버튼 색상 통일 */
-.list-button { background-color: #ffbe78; }
-.list-button:hover { background-color: #faaa61; }
+.list-button {
+  background-color: #ffbe78;
+}
+.list-button:hover {
+  background-color: #faaa61;
+}
 
-.edit-button { background-color: #ffbe78; }
-.edit-button:hover { background-color: #faaa61; }
+.edit-button {
+  background-color: #ffbe78;
+}
+.edit-button:hover {
+  background-color: #faaa61;
+}
 
-.delete-button { background-color: #f07864; }
-.delete-button:hover { background-color: #da604d; }
+.delete-button {
+  background-color: #f07864;
+}
+.delete-button:hover {
+  background-color: #da604d;
+}
 
-.comment-save { background-color: #ffbe78; }
-.comment-save:hover { background-color: #faaa61; }
+.comment-save {
+  background-color: #ffbe78;
+}
+.comment-save:hover {
+  background-color: #faaa61;
+}
 
-.comment-cancel { background-color: #f07864; }
-.comment-cancel:hover { background-color: #da604d; }
+.comment-cancel {
+  background-color: #f07864;
+}
+.comment-cancel:hover {
+  background-color: #da604d;
+}
 
 /* --------------------------------- */
 /*            수정 폼                */
@@ -210,8 +231,6 @@ button {
   margin-bottom: 4px;
   background-color: #fff;
 }
-
-
 
 /* --------------------------------- */
 /*            반응형                  */

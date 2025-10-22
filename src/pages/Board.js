@@ -66,7 +66,7 @@ function Board({ user }) {
 
   return (
     <div className="board-container">
-      <h2>맛집 추천 게시판</h2>
+      <h2>자유 게시판</h2>
       {loading && <p>게시판 글 리스트 로딩 중...</p>}
       {/*로딩 중에는 로딩 메시지, 다 불러오면 실제 내용을 보여주는 역할*/}
       {error && <p style={{ color: "red" }}>{error}</p>}

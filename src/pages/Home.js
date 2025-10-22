@@ -7,7 +7,7 @@ function Home() {
   const navigate = useNavigate();
 
   const handleExploreClick = () => {
-    navigate("/board");
+    navigate("/image-board");
   };
 
   return (

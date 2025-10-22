@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import api from "./api/axiosConfig";
 import BoardWrite from "./pages/BoardWrite";
 import BoardDetail from "./pages/BoardDetail";
+import ImageBoard from "./pages/ImageBoard";
+import ImageBoardDetail from "./pages/ImageBoardDetail";
 
 function App() {
   const [user, setUser] = useState(null); // 로그인 성공 -> 현재로그인한 유저이름
@@ -41,6 +43,11 @@ function App() {
         <Route path="/board" element={<Board user={user} />} />
         <Route path="/board/write" element={<BoardWrite user={user} />} />
         <Route path="/board/:id" element={<BoardDetail user={user} />} />
+        <Route path="/image-board" element={<ImageBoard user={user} />} />
+        <Route
+          path="/image-board/:id"
+          element={<ImageBoardDetail user={user} />}
+        />
       </Routes>
     </div>
   );
