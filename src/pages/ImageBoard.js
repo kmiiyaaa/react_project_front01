@@ -32,14 +32,18 @@ function ImageBoard({ user }) {
     }
   };
 
-  //글쓰기 버튼 클릭
+  // 글쓰기 버튼 클릭
   const handleWrite = () => {
-    //로그인한 유저만 글쓰기
     if (!user) {
-      alert("로그인 후 글 작성 가능");
+      alert("로그인 후 글 작성이 가능합니다.");
       return;
     }
-    navigate("/board/write");
+    navigate("/image-board/write");
+  };
+
+  // 게시글 상세보기
+  const handleDetail = (id) => {
+    navigate(`/image-board/${id}`);
   };
 
   useEffect(() => {
@@ -64,19 +68,29 @@ function ImageBoard({ user }) {
   };
 
   return (
-    <div className="image-board">
-      <h2>맛집 포스팅</h2>
-      {posts.map((post) => (
-        <div
-          key={post.id}
-          className="image-card"
-          onClick={() => imageDetail(post.id)}
-        >
-          <img src={post.imageUrl} alt={post.title} />
-          <h4>{post.title}</h4>
-        </div>
-      ))}
+    <div className="image-board-container">
+      <h2>🍽️ 맛집 포스팅</h2>
 
+      {loading && <p>게시글을 불러오는 중입니다...</p>}
+      {error && <p className="error">{error}</p>}
+
+      <div className="image-grid">
+        {posts.map((post) => (
+          <div
+            key={post.id}
+            className="image-card"
+            onClick={() => handleDetail(post.id)}
+          >
+            <img
+              src={post.imageUrl || "/default-thumbnail.jpg"}
+              alt={post.title}
+            />
+            <h4>{post.title}</h4>
+          </div>
+        ))}
+      </div>
+
+      {/* 페이지네이션 */}
       <div className="pagination">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))}
@@ -84,9 +98,16 @@ function ImageBoard({ user }) {
         >
           이전
         </button>
-        <span>
-          {currentPage + 1} / {totalPages}
-        </span>
+        {/* 페이지 번호 그룹 10개씩 출력 */}
+        {getPageNumbers().map((num) => (
+          <button
+            className={num === currentPage ? "active" : ""}
+            key={num}
+            onClick={() => setCurrentPage(num)}
+          >
+            {num + 1}
+          </button>
+        ))}
         <button
           onClick={() =>
             setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1))
@@ -96,8 +117,11 @@ function ImageBoard({ user }) {
           다음
         </button>
       </div>
-      <div className="write-button">
-        <button onClick={handleWrite}>글쓰기</button>
+
+      <div className="write-btn-wrap">
+        <button className="write-btn" onClick={handleWrite}>
+          글쓰기
+        </button>
       </div>
     </div>
   );
