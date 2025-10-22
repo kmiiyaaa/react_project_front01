@@ -1,4 +1,6 @@
-/* 전체 컨테이너 */
+/* ---------------------------------
+   🎨 게시판 전체 컨테이너
+--------------------------------- */
 .board-container {
   max-width: 900px;
   margin: 60px auto;
@@ -11,13 +13,15 @@
 /* 제목 */
 .board-container h2 {
   text-align: center;
-  color: #ff7b00;
+  color: #fca04a;
   font-size: 1.8rem;
   margin-bottom: 25px;
 }
 
-/* 게시판 테이블 */
-.board-container table {
+/* ---------------------------------
+   📋 게시글 테이블
+--------------------------------- */
+.board-table {
   width: 100%;
   border-collapse: collapse;
   background: white;
@@ -25,21 +29,21 @@
   overflow: hidden;
 }
 
-.board-container th,
-.board-container td {
+.board-table th,
+.board-table td {
   border-bottom: 1px solid #f1e2d0;
   padding: 14px 10px;
   text-align: center;
   color: #333;
 }
 
-.board-container th {
+.board-table th {
   background-color: #ffe7c7;
   color: #333;
   font-weight: bold;
 }
 
-.board-container tr:hover {
+.board-table tr:hover {
   background-color: #fff2e0;
   transition: background-color 0.2s ease;
 }
@@ -55,7 +59,9 @@
   text-decoration: underline;
 }
 
-/* 페이지네이션 */
+/* ---------------------------------
+   ⏩ 페이지네이션
+--------------------------------- */
 .pagination {
   display: flex;
   justify-content: center;
@@ -75,23 +81,25 @@
 }
 
 .pagination button:hover {
-  background-color: #ffe1b8;
+  background-color: #f5cf9a;
 }
 
 .pagination .active {
-  background-color: #ff7b00;
+  background-color: #f3b46b;
   color: white;
   font-weight: bold;
 }
 
-/* 글쓰기 버튼 */
-.board-container > div:last-child {
+/* ---------------------------------
+   ✏️ 글쓰기 버튼
+--------------------------------- */
+.write-button {
   display: flex;
   justify-content: flex-end;
 }
 
-.board-container button:last-child {
-  background-color: #ff7b00;
+.write-button button {
+  background-color: #f3b46b;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -101,6 +109,6 @@
   transition: background-color 0.2s ease;
 }
 
-.board-container button:last-child:hover {
+.write-button button:hover {
   background-color: #ff9500;
 }

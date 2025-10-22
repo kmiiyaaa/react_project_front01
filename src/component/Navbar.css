@@ -31,14 +31,14 @@
 }
 
 .menu a:hover {
-  color: #ff7b00;
+  color: #f3b377;
 }
 
 .menu button {
-  background-color: #ff7b00;
+  background-color: burlywood;
   color: white;
   border: none;
-  border-radius: 7px;
+  border-radius: 10px;
   padding: 7px 12px;
   cursor: pointer;
   font-size: 15px;

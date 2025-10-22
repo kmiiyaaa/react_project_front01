@@ -4,7 +4,7 @@ import "./Navbar.css";
 function Navbar({ user, onLogout }) {
   return (
     <div className="navbar">
-      <div>🏡 우리동네 맛집List 🍽️</div>
+      <div>🏡맛집List🍽️</div>
       <div className="menu">
         <Link to="/">Home</Link>
         <Link to="/board">게시판</Link>

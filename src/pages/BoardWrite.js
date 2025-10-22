@@ -34,7 +34,7 @@ function BoardWrite({ user }) {
   };
 
   return (
-    <div>
+    <div className="board-write-container">
       <h2>글쓰기</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -43,11 +43,14 @@ function BoardWrite({ user }) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         ></input>
+        <p style={{ color: "red" }}>{errors.title}</p>
         <textarea
           placeholder="내용"
           value={content}
           onChange={(e) => setContent(e.target.value)}
         ></textarea>
+
+        <p style={{ color: "red" }}>{errors.content}</p>
 
         <div>
           <button type="submit">등록</button>

@@ -22,8 +22,8 @@ function Board({ user }) {
 
       setPosts(res.data.posts); // 전체 게시글 -> 개시글의 배열
       setCurrentPage(res.data.currentPage); //현재 페이지 번호
-      setTotalPages(res.data.totalPages); // 전체 페이지 수 
-    setTotalItems(res.data.totalItems);  //모든 글의 갯수
+      setTotalPages(res.data.totalPages); // 전체 페이지 수
+      setTotalItems(res.data.totalItems); //모든 글의 갯수
     } catch (err) {
       console.error(err);
       setError("게시글을 불러오는데 실패하였습니다.");
@@ -70,7 +70,7 @@ function Board({ user }) {
       {loading && <p>게시판 글 리스트 로딩 중...</p>}
       {/*로딩 중에는 로딩 메시지, 다 불러오면 실제 내용을 보여주는 역할*/}
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <table>
+      <table className="board-table">
         <thead>
           <tr>
             <th>번호</th>
@@ -142,7 +142,7 @@ function Board({ user }) {
         </button>
       </div>
 
-      <div>
+      <div className="write-button">
         <button onClick={handleWrite}>글쓰기</button>
       </div>
     </div>

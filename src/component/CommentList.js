@@ -45,17 +45,19 @@ function CommentList({ comments, user, loadComments }) {
 
   // 댓글 날짜 함수 - 날짜,시간 출력
   const commentFormDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString();
+    return new Date(dateString).toLocaleString();
   };
 
   return (
-     <ul className="comment-list">
+    <ul className="comment-list">
       {comments.length === 0 && <p>등록 댓글이 없습니다.</p>}
       {comments.map((c) => (
         <li key={c.id} className="comment-item">
           <div className="comment-header">
-             <span className="comment-author">{c.author.username}</span>
-            <span className="comment-date">{commentFormDate(c.createDate)}</span>
+            <span className="comment-author">{c.author.username}</span>
+            <span className="comment-date">
+              {commentFormDate(c.createDate)}
+            </span>
           </div>
 
           {editCommentId === c.id ? (
@@ -66,8 +68,8 @@ function CommentList({ comments, user, loadComments }) {
                 onChange={(e) => setEditCommentContent(e.target.value)}
               />
               <div className="button-group">
-              <button onClick={() => handleCommentUpdate(c.id)}>저장</button>
-              <button onClick={() => setEditCommentId(null)}>취소</button>
+                <button onClick={() => handleCommentUpdate(c.id)}>저장</button>
+                <button onClick={() => setEditCommentId(null)}>취소</button>
               </div>
             </>
           ) : (
@@ -77,8 +79,16 @@ function CommentList({ comments, user, loadComments }) {
               <div>
                 {user === c.author.username && (
                   <div className="button-group">
-                    <button className="edit-button" onClick={() => handleCommentEdit(c)}>수정</button>
-                    <button className="delete-button" onClick={() => handleCommentDelete(c.id)}>
+                    <button
+                      className="edit-button"
+                      onClick={() => handleCommentEdit(c)}
+                    >
+                      수정
+                    </button>
+                    <button
+                      className="delete-button"
+                      onClick={() => handleCommentDelete(c.id)}
+                    >
                       삭제
                     </button>
                   </div>
