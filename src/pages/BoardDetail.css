@@ -59,7 +59,7 @@
 .button-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   margin-top: 10px;
   justify-content: flex-end;
 }
@@ -72,6 +72,25 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
+}
+
+.edit-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.comment-cancel button {
+  border: 1px solid salmon;
+  border-radius: 8px;
+  padding: 8px 18px;
+  color: rgb(20, 19, 19);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  gap: 5px;
 }
 
 /* 버튼 색상 통일 */
@@ -232,6 +251,45 @@ button {
   background-color: #fff;
 }
 
+/* 댓글 수정 버튼 그룹 */
+.edit-button-group {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+/* 저장 버튼 */
+.comment-save {
+  background-color: #ffbe78; /* 기존 수정 버튼 색상과 동일 */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.comment-save:hover {
+  background-color: #faaa61;
+}
+
+/* 취소 버튼 */
+.comment-cancel {
+  background-color: #f07864; /* 기존 삭제 버튼 색상과 동일 */
+  color: #fff; /* 글자색 흰색으로 */
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.comment-cancel:hover {
+  background-color: #da604d;
+}
 /* --------------------------------- */
 /*            반응형                  */
 /* --------------------------------- */

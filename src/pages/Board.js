@@ -85,7 +85,7 @@ function Board({ user }) {
               .slice() // 얕은 복사
               .map((p, index) => (
                 <tr key={p.id}>
-                  <td>{posts.length - index}</td>
+                  <td>{totalItems - (currentPage * 10 + index)}</td>
                   <td
                     className="click-title"
                     onClick={() => navigate(`/board/${p.id}`)}

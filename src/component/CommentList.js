@@ -39,7 +39,7 @@ function CommentList({ comments, user, loadComments }) {
 
   //댓글 수정여부 확인
   const handleCommentEdit = (comment) => {
-    setEditCommentId(comment.id);
+    setEditCommentId(Number(comment.id)); // 숫자로 통일
     setEditCommentContent(comment.content);
   };
 
@@ -67,18 +67,30 @@ function CommentList({ comments, user, loadComments }) {
                 value={editCommentContent}
                 onChange={(e) => setEditCommentContent(e.target.value)}
               />
-              <div className="button-group">
-                <button onClick={() => handleCommentUpdate(c.id)}>저장</button>
-                <button onClick={() => setEditCommentId(null)}>취소</button>
-              </div>
+              <>
+                <div className="edit-button-group">
+                  <button
+                    className="comment-save"
+                    onClick={() => handleCommentUpdate(c.id)}
+                  >
+                    저장
+                  </button>
+                  <button
+                    className="comment-cancel"
+                    onClick={() => setEditCommentId(null)}
+                  >
+                    취소
+                  </button>
+                </div>
+              </>
             </>
           ) : (
             /* 댓글 읽기 섹션 */
             <>
               <div className="comment-content">{c.content}</div>
-              <div>
+              <div className="button-group">
                 {user === c.author.username && (
-                  <div className="button-group">
+                  <div>
                     <button
                       className="edit-button"
                       onClick={() => handleCommentEdit(c)}
